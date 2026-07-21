@@ -15,7 +15,7 @@ The full curriculum is 28 scenarios across 5 modules:
 
 | Module | Focus | Scenarios |
 |---|---|---|
-| 1 — Python Fundamentals | Variables, strings, conditions, loops, functions, dicts, file I/O, OOP | 01–08 |
+| 1 — [Python Fundamentals](https://github.com/ShafiiRJuma/Machine-Learning-With-Claude/tree/main/Python%20Fundamentals) | Variables, strings, conditions, loops, functions, dicts, file I/O, OOP | 01–08 |
 | 2 — NumPy | Arrays, vectorized operations, aggregations, indexing, linear algebra basics | 09–13 |
 | 3 — Pandas | DataFrames, cleaning, filtering, groupby, merging, datetime, EDA | 14–20 |
 | 4 — Matplotlib & Seaborn | Charts, distributions, correlation, dashboards, styled reports | 21–25 |
