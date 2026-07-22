@@ -1,4 +1,4 @@
-###Scenario 1
+### Scenario 1
 
 ```
 student_name = "Juma Mwakisu"
@@ -9,7 +9,7 @@ is_registered = True
 print(f'Registration Confirmed: {student_name}\nAge: {student_age} | GPA: {gpa:.2f} | Status: {is_registered}')
 ```
 
-###Scenario 2
+### Scenario 2
 
 ```
 amount_inserted = 1500
@@ -20,7 +20,7 @@ status_message = 'Valid' if (amount_inserted >= min_amount and amount_inserted <
 print(f"Amount: {amount_inserted} TZS\nStatus: {status_message}")
 ```
 
-###Scenario 3
+### Scenario 3
 
 ```
 fares = [400, 400, 600, 400, 1000, 400, 600, 400]
@@ -39,7 +39,7 @@ for fare in fares:
 print(f"Total Collected: {total} TZS\nHighest Fare: {highest_fare} TZS\nPassengers at Highest Fare: {count}")
 ```
 
-###Scenario 4
+### Scenario 4
 
 ```
 def check_account_number(account_number):
