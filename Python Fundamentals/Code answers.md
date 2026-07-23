@@ -73,3 +73,40 @@ customer = {
 result = check_customer_record(customer)
 print(result)
 ```
+
+### Scenario 5
+
+```
+students = [
+    {"name": "Amani Joseph", "scores": [78, 65, 82]},
+    {"name": "Neema Kessy", "scores": [45, 50, 38]},
+    {"name": "Salum Hamisi", "scores": [90, 88, 95]},
+    {"name": "Grace Mtei", "scores": [60, 55, 70]}
+]
+
+def calculate_average(scores):
+    total_score = 0
+    count = 0
+    for score in scores:
+        total_score += score
+        count += 1
+    return float(total_score / count)
+
+def process_students(students):
+    students_final = []
+    for student in students:
+        average = calculate_average(student['scores'])
+        if average >= 50:
+            result = 'pass'
+        else:
+            result = 'fail'
+        students_final.append({'name': student['name'], "average": average, "result": result})
+
+    for final in students_final:
+        print(f"{final['name']}: {final['average']:.2f} - {final['result']}")
+
+    return students_final
+
+result = process_students(students)
+
+```
