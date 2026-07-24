@@ -151,6 +151,7 @@ def analyze_log(filepath):
             else:
                 broken_entries.append(parsed)
     print(f"Valid Entries: {len(valid_entries)}\nBroken Lines: {len(broken_entries)}\nConnected Devices: {connected_device}")
+```
 
 ### Scenario 7
 
