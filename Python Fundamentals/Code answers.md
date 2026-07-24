@@ -203,7 +203,3 @@ def analyze_transaction(filepath):
 
 analyze_transaction(filepath='mpesa_log.txt')
 ```
-
-
-analyze_log(filepath='server_log.txt')
-```
