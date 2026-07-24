@@ -110,3 +110,48 @@ def process_students(students):
 result = process_students(students)
 
 ```
+
+### Scenario 6
+
+```
+def load_log(filepath):
+    try:
+        with open(filepath, 'r') as f:
+            lines = f.readlines()
+            list_lines = [line.strip() for line in lines]
+            return list_lines
+    except FileNotFoundError:
+        print('Log file not found.')
+        return []
+
+
+def parse_line(line):
+    try:
+        parts = line.split(' | ')
+        timestamp = parts[0]
+        device_id = int(parts[1].split('=')[1])
+        status = parts[2].split('=')[1]
+        return {"timestamp": timestamp, "device_id": device_id, "status": status}
+    except:
+        return None
+
+
+def analyze_log(filepath):
+    valid_entries = []
+    broken_entries = []
+    connected_device = 0
+    line_list = load_log(filepath)
+    if len(line_list) != 0:
+        for line in line_list:
+            parsed = parse_line(line)
+            if parsed is not None:
+                valid_entries.append(parsed)
+                if parsed['status'] == 'connected':
+                    connected_device += 1
+            else:
+                broken_entries.append(parsed)
+    print(f"Valid Entries: {len(valid_entries)}\nBroken Lines: {len(broken_entries)}\nConnected Devices: {connected_device}")
+
+
+analyze_log(filepath='server_log.txt')
+```
