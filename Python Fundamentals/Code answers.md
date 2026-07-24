@@ -152,6 +152,57 @@ def analyze_log(filepath):
                 broken_entries.append(parsed)
     print(f"Valid Entries: {len(valid_entries)}\nBroken Lines: {len(broken_entries)}\nConnected Devices: {connected_device}")
 
+### Scenario 7
+
+```
+def load_transaction(filepath):
+    try:
+        with open(filepath, 'r') as f:
+            file = f.readlines()
+            mpesa_log = [log.strip() for log in file]
+            return mpesa_log
+    except FileNotFoundError:
+        print('Transaction file not found.')
+        return []
+
+
+def parse_transaction(line):
+    try:
+        line_list = line.split('|')
+        txn_id = line_list[0]
+        name = line_list[1]
+        amount = int(line_list[2])
+        direction = line_list[3]
+        if txn_id == '' or name == '':
+            return None
+        return {'txn_id': txn_id, 'name': name, 'amount': amount, 'direction': direction}
+    except:
+        return None
+
+
+def analyze_transaction(filepath):
+    valid_transaction = 0
+    corrupted_rows = 0
+    total_received = 0
+    total_sent = 0
+    all_log = load_transaction(filepath)
+    if len(all_log) != 0:
+        for oneline in all_log:
+            final = parse_transaction(oneline)
+            if final is not None:
+                valid_transaction += 1
+                if final['direction'] == 'received':
+                    total_received += final['amount']
+                elif final['direction'] == 'sent':
+                    total_sent += final['amount']
+            else:
+                corrupted_rows += 1
+        print(f"Valid Transactions: {valid_transaction}\nCorrupted Rows: {corrupted_rows}\nTotal Received: {total_received} TZS\nTotal Sent: {total_sent} TZS")
+
+
+analyze_transaction(filepath='mpesa_log.txt')
+```
+
 
 analyze_log(filepath='server_log.txt')
 ```
