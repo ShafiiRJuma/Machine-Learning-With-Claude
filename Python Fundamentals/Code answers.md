@@ -236,3 +236,41 @@ h1.mark_for_repair()
 print(h1.summary())
 
 ```
+
+### Scenario 9
+
+```
+class Student:
+    def __init__(self, name, subject_scores: dict):
+        self.name = name
+        self.subject_scores = subject_scores
+
+    def average(self):
+        total = 0
+        count = 0
+        for value in self.subject_scores.values():
+            total += value
+            count += 1
+        return round(total / count, 1)
+
+    def is_passing(self):
+        return True if self.average() >= 50 else False
+
+
+raw_data = [
+    {"name": "Editha Mnyika", "scores": {"Math": 78, "English": 65, "Physics": 82}},
+    {"name": "Godfrey Lyimo", "scores": {"Math": 45, "English": 50, "Physics": 38}},
+    {"name": "Consolata Massawe", "scores": {"Math": 90, "English": 88, "Physics": 95}},
+    {"name": "Peter Shayo", "scores": {"Math": 40, "English": 35, "Physics": 42}},
+]
+
+students = [Student(student['name'], student['scores']) for student in raw_data]
+
+passing_names = [x.name for x in students if x.is_passing()]
+failing_names = [x.name for x in students if not x.is_passing()]
+all_averages = [x.average() for x in students]
+
+print(passing_names)
+print(failing_names)
+print(all_averages)
+```
