@@ -203,3 +203,36 @@ def analyze_transaction(filepath):
 
 analyze_transaction(filepath='mpesa_log.txt')
 ```
+
+### Scenario 8
+
+```
+class Host:
+    def __init__(self, host_id, location, status):
+        self.host_id = host_id
+        self.location = location
+        self.status = status
+        self.hours_used = 0
+
+    def log_usage(self, hours):
+        self.hours_used += hours
+
+    def mark_for_repair(self):
+        self.status = "under_repair"
+
+    def mark_active(self):
+        self.status = 'active'
+
+    def summary(self):
+        return f"{self.host_id} ({self.location}): {self.status}, {self.hours_used} hrs used"
+
+
+h1 = Host("H01", "Kariakoo Branch", "active")
+h1.log_usage(5)
+h1.log_usage(7)
+print(h1.summary())
+
+h1.mark_for_repair()
+print(h1.summary())
+
+```
