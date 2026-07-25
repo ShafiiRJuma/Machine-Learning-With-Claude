@@ -1,4 +1,4 @@
-# Scenario 07 — Host Inventory Manager
+# Scenario 08 — Host Inventory Manager
 **Setting:** You're helping the IT team at an internet café chain in Dar es Salaam manage their computer inventory. Each café location has multiple host machines (desktops), and staff need an easy way to track each machine's status and usage without repeating the same logic over and over. This is your first OOP scenario — instead of separate functions and loose dictionaries, you'll wrap related data and behavior together into a **class**.
 
 ### What it is (quick theory before we build)
