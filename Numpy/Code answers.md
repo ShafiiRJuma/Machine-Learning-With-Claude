@@ -63,3 +63,21 @@ print(f"Overall Std: {overall_std}")
 print(f"Highest Average Exam Index: {highest_exam_avg_index}")
 
 ```
+
+### Scenario 13
+
+```
+import numpy as np
+
+repayments = np.array([45000, 50000, 2000, 48000, 500000, 47000, 1000, 52000, 49000, 300000])
+
+low_outliers = repayments[repayments < 5000]
+high_outliers = repayments[repayments > 200000]
+normal_range = repayments[(repayments >= 5000) & (repayments <= 200000)]
+outlier_count = len(low_outliers) + len(high_outliers)
+
+print(f"Low Outliers: {low_outliers}")
+print(f"High Outliers: {high_outliers}")
+print(f"Normal Range: {normal_range}")
+print(f"Outlier Count: {outlier_count}")
+```
