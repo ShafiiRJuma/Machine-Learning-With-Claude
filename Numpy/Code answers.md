@@ -81,3 +81,29 @@ print(f"High Outliers: {high_outliers}")
 print(f"Normal Range: {normal_range}")
 print(f"Outlier Count: {outlier_count}")
 ```
+
+### Scenario 14
+
+```
+import numpy as np
+
+students = ["Editha", "Godfrey", "Consolata", "Peter"]
+scores = np.array([
+    [78, 65, 82],   # Editha: Quiz, Midterm, Final
+    [45, 50, 38],   # Godfrey
+    [90, 88, 95],   # Consolata
+    [40, 35, 42],   # Peter
+])
+weights = np.array([0.2, 0.3, 0.5])   # Quiz 20%, Midterm 30%, Final 50%
+
+final_grades = np.dot(scores, weights)
+final_grades_rounded = np.round(final_grades, 2)
+top_student_index = np.argmax(final_grades)
+top_student_name = students[top_student_index]
+score_vector_norm = np.round(np.linalg.norm(scores[2]), 2)
+
+print(f"Final Grades: {final_grades_rounded}")
+print(f"Top Student: {top_student_name} (Grade: {final_grades_rounded[top_student_index]})")
+print(f"{top_student_name}'s Score Vector Norm: {score_vector_norm}")
+
+```
