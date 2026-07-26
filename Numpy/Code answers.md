@@ -39,3 +39,27 @@ print(f"Discounted Sales: {discounted_sales}")
 print(f"High Sales Days: {high_sales_days}")
 
 ```
+
+### Scenario 12
+
+```
+import numpy as np
+
+scores = np.array([
+    [78, 65, 82],   # Editha
+    [45, 50, 38],   # Godfrey
+    [90, 88, 95],   # Consolata
+    [40, 35, 42],   # Peter
+])
+
+student_averages = np.round(scores.mean(axis=1), 2)
+exam_averages = np.round(scores.mean(axis=0), 2)
+overall_std = np.round(scores.std(), 2)
+highest_exam_avg_index = np.argmax(exam_averages)
+
+print(f"Student Averages: {student_averages}")
+print(f"Exam Averages: {exam_averages}")
+print(f"Overall Std: {overall_std}")
+print(f"Highest Average Exam Index: {highest_exam_avg_index}")
+
+```
