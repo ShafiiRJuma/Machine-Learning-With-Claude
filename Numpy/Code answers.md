@@ -107,3 +107,21 @@ print(f"Top Student: {top_student_name} (Grade: {final_grades_rounded[top_studen
 print(f"{top_student_name}'s Score Vector Norm: {score_vector_norm}")
 
 ```
+
+### Scenario 15
+
+```
+import pandas as pd
+
+df = pd.read_csv('students.csv')
+
+print(df.shape)
+print(df.columns)
+print(df.head(3))
+print(df.info())
+
+cs_students = df[df['department'] == 'Computer Science']
+print(cs_students)
+```
+
+
