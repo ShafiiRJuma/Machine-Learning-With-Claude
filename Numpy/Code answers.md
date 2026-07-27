@@ -124,4 +124,23 @@ cs_students = df[df['department'] == 'Computer Science']
 print(cs_students)
 ```
 
+### Scenario 16
 
+```
+import pandas as pd
+
+df = pd.read_csv('patients.csv')
+
+first_patient_name = df.iloc[0, 1]
+row_by_label = df.loc[2]
+malaria_patients = df.query("condition == 'malaria'")
+high_fever = df.query("temperature > 38.5")
+young_malaria_patients = df.query("condition == 'malaria' and age < 18")
+
+print(f"First Patient: {first_patient_name}")
+print(f"Row by Label 2:\n{row_by_label}")
+print()
+print(f"Malaria Patients: {len(malaria_patients)}")
+print(f"High Fever Patients: {len(high_fever)}")
+print(f"Young Malaria Patients: {len(young_malaria_patients)}")
+```
